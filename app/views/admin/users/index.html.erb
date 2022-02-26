@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="row">
+		<div class="col"></div>
+		<h1 >USERS</h1>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<table class="table table-border table-striped">
+				<thead>
+					<th>USERNAME</th>
+					<th>EMAIL</th>
+					<th>STATUS</th>
+					<th>PROFILE</th>
+					<th>EDIT</th>
+					
+				</thead>
+				<tbody>
+					<% @users.each do |user| %>
+					<tr>
+						<td>username</td>
+						<td><%= user.email %></td>
+						<td><%= user.status %></td>
+						<td><%= link_to 'Profile', admin_user_path(user), class: 'btn btn-info' %></td>
+						<td><%= link_to 'Edit', edit_admin_user_path(user), class: 'btn btn-warning' %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

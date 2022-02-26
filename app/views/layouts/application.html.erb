@@ -11,7 +11,11 @@
   </head>
 
   <body>
+    <% if controller_path =~/^admin\// %>
+    <%= render 'admin/shared/header' %>
+    <% else %>
     <%= render 'shared/header' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
